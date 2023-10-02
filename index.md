@@ -19,3 +19,6 @@ If you have any questions, contact us [by email](bmtc@contacts.bham.ac.uk).
 [workbenchr]: https://bioconductor.org/packages/release/bioc/html/metabolomicsWorkbenchR.html
 [bmtc]: https://www.birmingham.ac.uk/facilities/metabolomics-training-centre/index.aspx
 
+- R
+- R-Studio
+- Bioconductor
