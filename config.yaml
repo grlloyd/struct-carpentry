@@ -61,9 +61,8 @@ contact: 'g.r.lloyd@bham.ac.uk' # FIXME
 episodes:
 - introduction.Rmd
 - getting-started.Rmd
-- bioconductor.Rmd
 - struct-and-structtoolbox.Rmd
-- struct-tempates.Rmd
+- struct-templates.Rmd
 - model-sequences.Rmd
 - iterators.Rmd
 - summary.Rmd
