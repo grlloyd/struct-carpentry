@@ -61,6 +61,11 @@ contact: 'g.r.lloyd@bham.ac.uk' # FIXME
 episodes:
 - introduction.Rmd
 - getting-started.Rmd
+- struct-and-structtoolbox.Rmd
+- struct-templates.Rmd
+- model-sequences.Rmd
+- iterators.Rmd
+- summary.Rmd
 
 # Information for Learners
 learners:
