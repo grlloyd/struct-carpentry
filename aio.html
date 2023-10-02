@@ -202,6 +202,66 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="struct-and-structtoolbox.html">3. struct and structToolbox</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="struct-templates.html">4. struct templates</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="model-sequences.html">5. Model Sequences</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="iterators.html">6. Iterators</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="summary.html">7. Summary</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -272,6 +332,415 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
+<li>What is the aim of this course?</li>
+<li>Who is the target audience?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Describe the purpose of the course</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="why-use-r">Why use R?<a class="anchor" aria-label="anchor" href="#why-use-r"></a>
+</h3>
+<p>There are many different software applications that enable data
+analysis of untargeted LCMS metabolomics data. For example many
+instrument manufacturers provide bespoke software solutions to
+compliment their instrument. Depending on the manufacturer, this
+software allows for easy import and processing of data sets collected
+using their system.</p>
+<div id="your-software" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="your-software" class="callout-inner">
+<h3 class="callout-title">Your software<a class="anchor" aria-label="anchor" href="#your-software"></a>
+</h3>
+<div class="callout-content">
+<p>It is definitely of value for you to explore the software that came
+with your instrument. You will need to be able to export your data in a
+common format e.g. <code>.csv</code> if you want to process it with
+other software.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Unfortunately the nature of science means that experimental designs
+can vary considerably from experiment to experiment, and it is difficult
+to find a software solution that can accommodate the multitude of
+possible experimental designs and data analysis steps needed to process
+them.</p>
+<div id="experimental-design" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="experimental-design" class="callout-inner">
+<h3 class="callout-title">Experimental design<a class="anchor" aria-label="anchor" href="#experimental-design"></a>
+</h3>
+<div class="callout-content">
+<p>Consider the different experimental designs you might need to
+analyse.</p>
+<ul>
+<li>How many samples are there?</li>
+<li>Will you need multiple batches?</li>
+<li>How many variables are you trying to study?</li>
+<li>What question(s) are you trying to answer?</li>
+</ul>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>This makes programmatic solutions, such as those using R and/or
+Python, incredibly powerful. They can be extremely flexible, allowing
+you to accommodate any experimental design and implement a bespoke
+processing solution suited to your instrument/sample type/experimental
+design etc.</p>
+<p>However, this flexibility comes at the cost of ease-of-use; not
+everyone has, needs or wants the expertise to develop and implement a
+solution that needs in-depth programming expertise to implement.
+<br></p>
+</div>
+<div class="section level3">
+<h3 id="struct-and-structtoolbox">struct and structToolbox<a class="anchor" aria-label="anchor" href="#struct-and-structtoolbox"></a>
+</h3>
+<p>R packages <code>struct</code> and <code>structToolbox</code> are
+programmatic solutions that aim to simplify the implementation of data
+processing pipelines for untargeted LCMS metabolomics data sets in R. In
+addition to making it easier to implement flexible workflows, they are
+reproducible and more transparent regarding the intended analysis steps.
+The use of modular templates also makes it easier to learn from, as you
+and your instructor can focus on <em>what</em> tool to use and
+<em>why</em>, rather than <em>how</em> they are going to implement
+it.</p>
+<p>In this course you will learn about the modular workflow templates
+defined by <code>struct</code> and use some pre-defined templates to
+build and apply a data processing workflow on some data downloaded from
+Metabolomics Workbench using the <code>metabolomicsWorkbenchR</code>
+package.</p>
+<div id="implementation-details" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="implementation-details" class="callout-inner">
+<h3 class="callout-title">Implementation details<a class="anchor" aria-label="anchor" href="#implementation-details"></a>
+</h3>
+<div class="callout-content">
+<p>If you want to learn more details about the implementation of struct
+and how to create your own temples then you might find the package
+vignettes for struct and structToolbox useful:</p>
+<ul>
+<li><a href="https://www.bioconductor.org/packages/release/bioc/vignettes/struct/inst/doc/struct_templates_and_helper_functions.html" class="external-link">struct</a></li>
+<li><a href="https://www.bioconductor.org/packages/release/bioc/vignettes/structToolbox/inst/doc/data_analysis_omics_using_the_structtoolbox.html" class="external-link">structToolbox</a></li>
+</ul>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+<div class="section level3">
+<h3 id="this-training-course">This training course<a class="anchor" aria-label="anchor" href="#this-training-course"></a>
+</h3>
+<p>The course is given to students prior to attending a Birmingham
+Metabolomics Training Centre (BMTC) course. It is suited to a range of
+participants wishing to learn about the implementation of metabolomics
+data processing pipelines and wanting an introduction to the tools used
+by the BMTC and Phenome Centre Birmingham (PCB). It can also be used as
+a basic introduction to the packages even if you are not attending a
+BMTC course, though we very much encourage you to consider our courses
+and continue your learning.</p>
+<div id="bmtc-courses" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="bmtc-courses" class="callout-inner">
+<h3 class="callout-title">BMTC courses<a class="anchor" aria-label="anchor" href="#bmtc-courses"></a>
+</h3>
+<div class="callout-content">
+<p>Interested in learning more? Visit the BMTC website for more info on
+our courses.</p>
+<p><a href="https://www.birmingham.ac.uk/facilities/metabolomics-training-centre/index.aspx" class="external-link uri">https://www.birmingham.ac.uk/facilities/metabolomics-training-centre/index.aspx</a></p>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-getting-started"><p>Content from <a href="getting-started.html">Getting started</a></p>
+<hr>
+<p> Last updated on 2023-10-02 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/getting-started.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do you install Bioconductor packages?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Install <code>struct</code>, <code>structToolbox</code> and
+<code>metabolomicsWorkbenchR</code> and all dependencies.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="summary-and-setup">Summary and Setup<a class="anchor" aria-label="anchor" href="#summary-and-setup"></a>
+</h3>
+<p>If you haven’t already, you should make sure you have the latest
+release of R and R-Studio installed, and have installed the
+<code>BiocManager</code> package by following the instructions on the <a href="index.html#setup">setup page</a>. <br></p>
+</div>
+<div class="section level3">
+<h3 id="what-is-the-biocmanager-package-for">What is the BiocManager package for?<a class="anchor" aria-label="anchor" href="#what-is-the-biocmanager-package-for"></a>
+</h3>
+<p><a href="https://www.bioconductor.org/" class="external-link">Bioconductor</a> is a
+repository of R packages. All packages are regularly built and tested to
+ensure that they are functioning correctly and meet certain standards.
+For every new release of R a snapshot of the entire Bioconductor
+repository is stored and retained in order to make analysis reproducible
+at the time it was run.</p>
+<p>The <code>BiocManager</code> package (<a href="https://www.rdocumentation.org/packages/BiocManager" class="external-link">link</a>)
+contains a small number of functions to install R packages and check
+that the versions are compatible with the installed version.</p>
+<p>It is essential therefore that you keep up-to-date with the R
+version, otherwise you will not be able to use the latest version of
+packages in the Bioconductor repository. <br></p>
+</div>
+<div class="section level3">
+<h3 id="installing-bioconductor-packages">Installing Bioconductor packages<a class="anchor" aria-label="anchor" href="#installing-bioconductor-packages"></a>
+</h3>
+<p>Using <code>BiocManager</code> to install the packages needed for
+this course will ensure that you are using the most recent release, and
+can also install the appropriate versions of all needed dependencies. To
+install the packages for this course copy and paste the code below into
+the command line and hit Enter:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span></span>
+<span>    <span class="fu">c</span><span class="op">(</span><span class="st">'struct'</span>,<span class="st">'structToolbox'</span>,<span class="st">'metabolomicsWorkbenchR'</span><span class="op">)</span>,</span>
+<span>    dependencies<span class="op">=</span><span class="st">'suggests'</span><span class="op">)</span></span></code></pre>
+</div>
+<p><br></p>
+<p>You can check that the packages are installed and working by running
+the following code:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">'struct'</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="st">'structToolbox'</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="st">'metabolomicsWorkbenchR'</span><span class="op">)</span></span></code></pre>
+</div>
+<p>If you receive no error messages, then you are ready to go! <br></p>
+</div>
+<div class="section level3">
+<h3 id="additional-packages">Additional packages<a class="anchor" aria-label="anchor" href="#additional-packages"></a>
+</h3>
+<p>In addition to the <code>struct</code> and <code>structToolbox</code>
+packages it is useful to load the <code>ggplot2</code> package. It will
+allow you to modify e.g. chart titles quickly and easily. It should have
+been installed already as a dependency of <code>structToolbox</code>, so
+you can just activate it for the current session.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ggplot2</span><span class="op">)</span></span></code></pre>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-struct-and-structtoolbox"><p>Content from <a href="struct-and-structtoolbox.html">struct and structToolbox</a></p>
+<hr>
+<p> Last updated on 2023-10-02 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/struct-and-structtoolbox.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What does the <code>struct</code> package do?</li>
+<li>What does the <code>structToolbox</code> package do?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Describe the philosophy underpinning <code>struct</code>
+templates</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="what-is-a-data-processing-workflow">What is a data processing workflow?<a class="anchor" aria-label="anchor" href="#what-is-a-data-processing-workflow"></a>
+</h3>
+<p>There many slightly different definitions of a workflow, so its
+useful to be specific about what we mean by a workflow in this course.
+Here, a workflow is a sequence of steps, or modules, where each step
+implements a different data processing step. For example, one step in
+the workflow might be to normalise the data, another to scale it. The
+workflow steps can be connected in any order, and the data flows into
+one step, is processed, and then the output is used an input to the next
+step.</p>
+<div id="your-workflow" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="your-workflow" class="callout-inner">
+<h3 class="callout-title">Your workflow<a class="anchor" aria-label="anchor" href="#your-workflow"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>What data processing steps do you think you might need for your
+workflow?</li>
+<li>What statistical analysis might you like to include as part of your
+workflow?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Suggestions
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ul>
+<li>Quality filtering, normalisation, scaling, transformation,
+imputation</li>
+<li>univariate significance tests, multivariate visualisation</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="the-struct-package">The <code>struct</code> package<a class="anchor" aria-label="anchor" href="#the-struct-package"></a>
+</h3>
+<p>As you will already have seen, there is a large number of R packages.
+This is one of the great strengths of R. However, when writing code to
+carry out a number of workflow steps it can be difficult to integrate
+all of the required packages to together in a way that is transparent
+and reproducible.</p>
+<p>The <code>struct</code> package tries to address this by defining a
+number of “templates”. These templates define what the data structure
+should be, how data will flow through an object, and which output is
+transferred to the input of the next object.</p>
+<figure><img src="fig/workflow-graphic.png" alt="A graphical representation of two workflow steps. Data flow into the first step from the left, is processed and then flows out of one of two outputs from the first step and into the first input of the second step. The data is processed again by the second step and the first output then connects to two different type of chart." class="figure mx-auto d-block"></figure><p>As well as the templates <code>struct</code> also provides a number
+of “methods” for each template. Methods are functions change how they
+work depending on the input template. Some methods defined by
+<code>struct</code> enable easy access to inputs and outputs of the
+templates, while others, such as <code>show</code> define what is
+displayed when the template is displayed on the console.</p>
+<p>None of the templates in <code>struct</code> implement any data
+processing steps, they only define what a step should look like. The
+idea is that other packages can implement their code inside a template
+to make it compatible with other workflow steps. For example, the
+<code>structToolbox</code> package uses the <code>struct</code>
+templates to convert processing steps from other packages into workflow
+steps using `struct’ templates. All workflow steps are then compatible
+with each other, and you no longer need to worry about <em>how</em> to
+implement the steps, you can focus on <em>what</em> steps to use and in
+what order.</p>
+</div>
+<div class="section level3">
+<h3 id="struct-templates">
+<code>struct</code> Templates<a class="anchor" aria-label="anchor" href="#struct-templates"></a>
+</h3>
+<p>There are a number of <code>struct</code> templates working in the
+background, but there are 5 key front facing templates that you will use
+a lot. When we talk about as instance of a template, we refer to it as
+an “object”.</p>
+<div class="section level4">
+<h4 id="datasetexperiment-object">DatasetExperiment object<a class="anchor" aria-label="anchor" href="#datasetexperiment-object"></a>
+</h4>
+<p>This template defines the what format the data should be in. You will
+often find that the data you use actually consists of three key
+elements:</p>
+<div class="context">
+<p><strong>A table of peak areas (or similar)</strong><br> The template
+defines that the features (metabolites) should be in the columns, and
+the samples in the rows.</p>
+<p><strong>Meta data for the samples</strong><br> Meta data is data
+provided <em>in addition</em> to the sample names. It can come in many
+forms. For example it could be categorical: e.g. whether the sample was
+a control sample or a treated sample, or it could be continuous:
+e.g. the BMI of the subject. The templates defines that the samples are
+in rows, and each column corresponds to one piece of meta data.</p>
+<p><strong>Meta data for the features</strong><br> Like the sample meta
+data, additional information about each feature is stored here, such as
+m/z and retention time, or an annotation. The template defines that the
+features are in rows and the columns correspond to the meta data.</p>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div>
+</div></section><section id="aio-struct-templates"><p>Content from <a href="struct-templates.html">struct templates</a></p>
+<hr>
+<p> Last updated on 2023-10-02 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/struct-templates.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
 <li>TODO</li>
 </ul>
 </div>
@@ -288,11 +757,75 @@
 </div>
 </div>
 </div>
-</div></section><section id="aio-getting-started"><p>Content from <a href="getting-started.html">Getting started</a></p>
+</div></section><section id="aio-model-sequences"><p>Content from <a href="model-sequences.html">Model Sequences</a></p>
 <hr>
 <p> Last updated on 2023-10-02 | 
         
-        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/getting-started.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/model-sequences.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></section><section id="aio-iterators"><p>Content from <a href="iterators.html">Iterators</a></p>
+<hr>
+<p> Last updated on 2023-10-02 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/iterators.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></section><section id="aio-summary"><p>Content from <a href="summary.html">Summary</a></p>
+<hr>
+<p> Last updated on 2023-10-02 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/summary.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -345,8 +878,8 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.13.3" class="external-link">sandpaper (0.13.3)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.6.1" class="external-link">pegboard (0.6.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.14.0" class="external-link">sandpaper (0.14.0)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.7.0" class="external-link">pegboard (0.7.0)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.3.0" class="external-link">varnish (0.3.0)</a>.</p>
 			</div>
 		</footer>
