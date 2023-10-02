@@ -60,6 +60,7 @@ contact: 'g.r.lloyd@bham.ac.uk' # FIXME
 # Order of episodes in your lesson
 episodes:
 - introduction.Rmd
+- getting-started.Rmd
 
 # Information for Learners
 learners:
