@@ -41,6 +41,13 @@ BiocManager::install(
 
 You can check that the packages are installed and working by running the following code:
 
+```{r, include=FALSE,echo=FALSE}
+library('struct')
+library('structToolbox')
+library('metabolomicsWorkbenchR')
+library('ggplot2')
+```
+
 ```R
 library('struct')
 library('structToolbox')
