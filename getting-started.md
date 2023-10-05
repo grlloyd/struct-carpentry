@@ -41,6 +41,8 @@ BiocManager::install(
 
 You can check that the packages are installed and working by running the following code:
 
+
+
 ```R
 library('struct')
 library('structToolbox')

@@ -1,5 +1,5 @@
 ---
-title: "struct templates"
+title: "Model objects"
 teaching: 0
 exercises: 0
 ---

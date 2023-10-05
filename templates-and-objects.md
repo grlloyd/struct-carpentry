@@ -1,0 +1,182 @@
+---
+title: "Templates and Objects"
+teaching: 0
+exercises: 0
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- What does the `struct` package do?
+- What does the `structToolbox` package do?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Describe the philosophy underpinning `struct` templates
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+### What is a data processing workflow?
+There many slightly different definitions of a workflow, so its useful to be specific about what we mean by a workflow in this course. Here, a workflow is a sequence of steps, or modules, where each step implements a different data processing step. For example, one step in the workflow might be to normalise the data, another to scale it. The workflow steps can be connected in any order, and the data flows into one step, is processed, and then the output is used an input to the next step.
+
+:::::::::::::: challenge
+## Your workflow
+- What data processing steps do you think you might need for your workflow?
+- What statistical analysis might you like to include as part of your workflow?
+
+:::::::::::::: solution
+## Suggestions
+- Quality filtering, normalisation, scaling, transformation, imputation
+- Univariate significance tests, multivariate visualisation
+::::::::::::::
+
+::::::::::::::
+
+### Templates and Objects
+As you will already have seen, there is a large number of R packages. This is one of the great strengths of R. However, when writing code to carry out a number of workflow steps it can be difficult to integrate all of the required packages to together in a way that is transparent and reproducible. 
+
+The `struct` package tries to address this by defining a number of "templates". These templates define what the data structure should be, how data will flow in and out of a workflow step, and which output is transferred to the input of the next object. 
+
+In the figure below the green boxes represent workflow steps. Data flows in and out of the workflow steps before finally generating some charts. Each workflow step uses the same basic template, but applies a different data processing step by overriding the template defaults.
+
+![](fig/workflow-graphic.png){alt="A graphical representation of two workflow steps. Data flow into the first step from the left, is processed and then flows out of one of two outputs from the first step and into the first input of the second step. The data is processed again by the second step and the first output then connects to two different type of chart."}
+
+None of the templates in `struct` implement any data processing steps, they only define what a step should look like. The idea is that other packages can implement their code inside a template to make it compatible with other workflow steps. For example, the `structToolbox` package uses the `struct` templates to convert processing steps from other packages into workflow steps using `struct' templates. All workflow steps are then compatible with each other, and you no longer need to worry about _how_ to implement the steps, you can focus on _what_ steps to use and in what order.
+
+### Template methods
+As well as the templates `struct` also provides a number of "methods" for each template. Methods are functions change how they work depending on the input template. Some methods defined by `struct` enable easy access to inputs and outputs of the templates, while others, such as `show` define what is displayed when the template is displayed on the console.
+
+### Working with Templates and Objects
+All templates inherit functionality from the `struct_class` template. You will never normally use this template directly, but we can use it here to demonstrate some of the features of a template. To initialise an instance of a template you use its name as a function call. When a template is initialised it becomes an "object". You can print the details of an object to the console using the `show` command.
+
+
+```r
+# create an instance of a struct_class template
+SC = struct_class()
+
+# print to console
+show(SC)
+```
+
+```{.output}
+A "struct_class" object
+-----------------------
+name:          
+description:   
+```
+
+
+All struct templates have a number of basic parameters:
+
+- name: a short identifier for the object
+- description: a longer description of the object
+- type: keywords related to the object
+
+As you can see, there is no name or description for the basic template; usually these would be assigned for you. However, you can assign values to any input parameters when creating the object. 
+
+
+```r
+# create an instance of a struct_class template
+SC = struct_class(
+        name = 'Example', 
+        description = 'An example object')
+
+# print to console
+SC # the same as show(SC)
+```
+
+```{.output}
+A "struct_class" object
+-----------------------
+name:          Example
+description:   An example object
+```
+
+You can also treat the object a bit like a list. This allows you can get and set input/output parameters later using the `$` symbol. 
+
+
+```r
+# get the description
+str = SC$description
+
+# set the description
+SC$description = "An example struct_class object"
+SC
+```
+
+```{.output}
+A "struct_class" object
+-----------------------
+name:          Example
+description:   An example struct_class object
+```
+
+
+::::: challenge
+
+1. Create a new instance of the `struct_class` template.
+2. Give your object a name and a description.
+3. Change the name and description of your object.
+4. Print your object to the console.
+
+:::: solution
+## Solution 1
+
+```r
+S = struct_class()
+```
+::::
+
+:::: solution
+## Solution 2
+
+```r
+# at object creation
+S = struct_class(
+        name='My first object',
+        description='The solution to challenge 1')
+```
+::::
+
+:::: solution
+## Solution 3
+
+```r
+S$name = 'A better name'
+S$description = 'A better description'
+```
+::::
+
+:::: solution
+## Solution 4
+
+```r
+show(S)
+```
+
+```{.output}
+A "struct_class" object
+-----------------------
+name:          A better name
+description:   A better description
+```
+::::
+
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
