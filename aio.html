@@ -205,7 +205,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="struct-and-structtoolbox.html">3. struct and structToolbox</a>
+        <a href="templates-and-objects.html">3. Templates and Objects</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -217,7 +217,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="struct-templates.html">4. struct templates</a>
+        <a href="datasetexperiment-objects.html">4. DatasetExperiment objects</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -229,7 +229,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="model-sequences.html">5. Model Sequences</a>
+        <a href="model-objects.html">5. Model objects</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -241,7 +241,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="iterators.html">6. Iterators</a>
+        <a href="model-sequences.html">6. Model Sequences</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -253,7 +253,19 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="summary.html">7. Summary</a>
+        <a href="iterators.html">7. Iterators</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="summary.html">8. Summary</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -318,7 +330,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Introduction</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
         <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -478,7 +490,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-getting-started"><p>Content from <a href="getting-started.html">Getting started</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
         <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/getting-started.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -580,11 +592,11 @@ you can just activate it for the current session.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div></section><section id="aio-struct-and-structtoolbox"><p>Content from <a href="struct-and-structtoolbox.html">struct and structToolbox</a></p>
+</div></section><section id="aio-templates-and-objects"><p>Content from <a href="templates-and-objects.html">Templates and Objects</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
-        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/struct-and-structtoolbox.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/templates-and-objects.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -655,7 +667,7 @@ workflow?</li>
 <ul>
 <li>Quality filtering, normalisation, scaling, transformation,
 imputation</li>
-<li>univariate significance tests, multivariate visualisation</li>
+<li>Univariate significance tests, multivariate visualisation</li>
 </ul>
 </div>
 </div>
@@ -663,7 +675,7 @@ imputation</li>
 </div>
 </div>
 <div class="section level3">
-<h3 id="the-struct-package">The <code>struct</code> package<a class="anchor" aria-label="anchor" href="#the-struct-package"></a>
+<h3 id="templates-and-objects">Templates and Objects<a class="anchor" aria-label="anchor" href="#templates-and-objects"></a>
 </h3>
 <p>As you will already have seen, there is a large number of R packages.
 This is one of the great strengths of R. However, when writing code to
@@ -672,15 +684,13 @@ all of the required packages to together in a way that is transparent
 and reproducible.</p>
 <p>The <code>struct</code> package tries to address this by defining a
 number of “templates”. These templates define what the data structure
-should be, how data will flow through an object, and which output is
-transferred to the input of the next object.</p>
-<figure><img src="fig/workflow-graphic.png" alt="A graphical representation of two workflow steps. Data flow into the first step from the left, is processed and then flows out of one of two outputs from the first step and into the first input of the second step. The data is processed again by the second step and the first output then connects to two different type of chart." class="figure mx-auto d-block"></figure><p>As well as the templates <code>struct</code> also provides a number
-of “methods” for each template. Methods are functions change how they
-work depending on the input template. Some methods defined by
-<code>struct</code> enable easy access to inputs and outputs of the
-templates, while others, such as <code>show</code> define what is
-displayed when the template is displayed on the console.</p>
-<p>None of the templates in <code>struct</code> implement any data
+should be, how data will flow in and out of a workflow step, and which
+output is transferred to the input of the next object.</p>
+<p>In the figure below the green boxes represent workflow steps. Data
+flows in and out of the workflow steps before finally generating some
+charts. Each workflow step uses the same basic template, but applies a
+different data processing step by overriding the template defaults.</p>
+<figure><img src="fig/workflow-graphic.png" alt="A graphical representation of two workflow steps. Data flow into the first step from the left, is processed and then flows out of one of two outputs from the first step and into the first input of the second step. The data is processed again by the second step and the first output then connects to two different type of chart." class="figure mx-auto d-block"></figure><p>None of the templates in <code>struct</code> implement any data
 processing steps, they only define what a step should look like. The
 idea is that other packages can implement their code inside a template
 to make it compatible with other workflow steps. For example, the
@@ -692,44 +702,267 @@ implement the steps, you can focus on <em>what</em> steps to use and in
 what order.</p>
 </div>
 <div class="section level3">
-<h3 id="struct-templates">
-<code>struct</code> Templates<a class="anchor" aria-label="anchor" href="#struct-templates"></a>
+<h3 id="template-methods">Template methods<a class="anchor" aria-label="anchor" href="#template-methods"></a>
 </h3>
-<p>There are a number of <code>struct</code> templates working in the
-background, but there are 5 key front facing templates that you will use
-a lot. When we talk about as instance of a template, we refer to it as
-an “object”.</p>
-<div class="section level4">
-<h4 id="datasetexperiment-object">DatasetExperiment object<a class="anchor" aria-label="anchor" href="#datasetexperiment-object"></a>
-</h4>
-<p>This template defines the what format the data should be in. You will
-often find that the data you use actually consists of three key
-elements:</p>
-<div class="context">
-<p><strong>A table of peak areas (or similar)</strong><br> The template
-defines that the features (metabolites) should be in the columns, and
-the samples in the rows.</p>
-<p><strong>Meta data for the samples</strong><br> Meta data is data
-provided <em>in addition</em> to the sample names. It can come in many
-forms. For example it could be categorical: e.g. whether the sample was
-a control sample or a treated sample, or it could be continuous:
-e.g. the BMI of the subject. The templates defines that the samples are
-in rows, and each column corresponds to one piece of meta data.</p>
-<p><strong>Meta data for the features</strong><br> Like the sample meta
-data, additional information about each feature is stored here, such as
-m/z and retention time, or an annotation. The template defines that the
-features are in rows and the columns correspond to the meta data.</p>
+<p>As well as the templates <code>struct</code> also provides a number
+of “methods” for each template. Methods are functions change how they
+work depending on the input template. Some methods defined by
+<code>struct</code> enable easy access to inputs and outputs of the
+templates, while others, such as <code>show</code> define what is
+displayed when the template is displayed on the console.</p>
+</div>
+<div class="section level3">
+<h3 id="working-with-templates-and-objects">Working with Templates and Objects<a class="anchor" aria-label="anchor" href="#working-with-templates-and-objects"></a>
+</h3>
+<p>All templates inherit functionality from the
+<code>struct_class</code> template. You will never normally use this
+template directly, but we can use it here to demonstrate some of the
+features of a template. To initialise an instance of a template you use
+its name as a function call. When a template is initialised it becomes
+an “object”. You can print the details of an object to the console using
+the <code>show</code> command.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># create an instance of a struct_class template</span></span>
+<span><span class="va">SC</span> <span class="op">=</span> <span class="fu">struct_class</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># print to console</span></span>
+<span><span class="fu">show</span><span class="op">(</span><span class="va">SC</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>A "struct_class" object
+-----------------------
+name:          
+description:   </code></pre>
+</div>
+<p>All struct templates have a number of basic parameters:</p>
+<ul>
+<li>name: a short identifier for the object</li>
+<li>description: a longer description of the object</li>
+<li>type: keywords related to the object</li>
+</ul>
+<p>As you can see, there is no name or description for the basic
+template; usually these would be assigned for you. However, you can
+assign values to any input parameters when creating the object.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># create an instance of a struct_class template</span></span>
+<span><span class="va">SC</span> <span class="op">=</span> <span class="fu">struct_class</span><span class="op">(</span></span>
+<span>        name <span class="op">=</span> <span class="st">'Example'</span>, </span>
+<span>        description <span class="op">=</span> <span class="st">'An example object'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># print to console</span></span>
+<span><span class="va">SC</span> <span class="co"># the same as show(SC)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>A "struct_class" object
+-----------------------
+name:          Example
+description:   An example object</code></pre>
+</div>
+<p>You can also treat the object a bit like a list. This allows you can
+get and set input/output parameters later using the <code>$</code>
+symbol.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># get the description</span></span>
+<span><span class="va">str</span> <span class="op">=</span> <span class="va">SC</span><span class="op">$</span><span class="va">description</span></span>
+<span></span>
+<span><span class="co"># set the description</span></span>
+<span><span class="va">SC</span><span class="op">$</span><span class="va">description</span> <span class="op">=</span> <span class="st">"An example struct_class object"</span></span>
+<span><span class="va">SC</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>A "struct_class" object
+-----------------------
+name:          Example
+description:   An example struct_class object</code></pre>
+</div>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>Create a new instance of the <code>struct_class</code>
+template.</li>
+<li>Give your object a name and a description.</li>
+<li>Change the name and description of your object.</li>
+<li>Print your object to the console.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Solution 1
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">S</span> <span class="op">=</span> <span class="fu">struct_class</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Solution 2
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># at object creation</span></span>
+<span><span class="va">S</span> <span class="op">=</span> <span class="fu">struct_class</span><span class="op">(</span></span>
+<span>        name<span class="op">=</span><span class="st">'My first object'</span>,</span>
+<span>        description<span class="op">=</span><span class="st">'The solution to challenge 1'</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  Solution 3
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">S</span><span class="op">$</span><span class="va">name</span> <span class="op">=</span> <span class="st">'A better name'</span></span>
+<span><span class="va">S</span><span class="op">$</span><span class="va">description</span> <span class="op">=</span> <span class="st">'A better description'</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
+  Solution 4
+  </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">show</span><span class="op">(</span><span class="va">S</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>A "struct_class" object
+-----------------------
+name:          A better name
+description:   A better description</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
-</div></section><section id="aio-struct-templates"><p>Content from <a href="struct-templates.html">struct templates</a></p>
+</div></section><section id="aio-datasetexperiment-objects"><p>Content from <a href="datasetexperiment-objects.html">DatasetExperiment objects</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
-        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/struct-templates.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/datasetexperiment-objects.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>TODO</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="datasetexperiment-object">DatasetExperiment object<a class="anchor" aria-label="anchor" href="#datasetexperiment-object"></a>
+</h3>
+<p>This template defines the what format the data should be in, and
+consists of three key elements: data, sample_meta and variable_meta.</p>
+<p><strong>data: a table of peak areas (or similar)</strong><br> The
+DatasetExperiment template defines that this should be a
+<code>data.frame</code> with features (metabolites) should be in the
+columns, and the samples in the rows.</p>
+<p><strong>sample_meta: meta data for the samples</strong><br> Meta data
+is data provided <em>in addition</em> to the sample names. It can come
+in many forms. For example it could be categorical: e.g. whether the
+sample was a control sample or a treated sample, or it could be
+continuous: e.g. the BMI of the subject. The template defines that this
+should be a <code>data.frame</code> where the samples are in rows, and
+each column corresponds to one piece of meta data.</p>
+<p><strong>variable_meta: meta data for the features</strong><br> Like
+the sample meta data, additional information about each feature is
+stored here, such as m/z and retention time, or an annotation. The
+template defines that this should be a <code>data.frame</code> where the
+features are in rows and the columns correspond to the meta data.</p>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-model-objects"><p>Content from <a href="model-objects.html">Model objects</a></p>
+<hr>
+<p> Last updated on 2023-10-05 | 
+        
+        <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/model-objects.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -759,7 +992,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-model-sequences"><p>Content from <a href="model-sequences.html">Model Sequences</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
         <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/model-sequences.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -791,7 +1024,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-iterators"><p>Content from <a href="iterators.html">Iterators</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
         <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/iterators.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -823,7 +1056,7 @@ any links that you are not going to use.
 </div>
 </div></section><section id="aio-summary"><p>Content from <a href="summary.html">Summary</a></p>
 <hr>
-<p> Last updated on 2023-10-02 | 
+<p> Last updated on 2023-10-05 | 
         
         <a href="https://github.com/grlloyd/struct-carpentry/edit/main/episodes/summary.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -879,7 +1112,7 @@ any links that you are not going to use.
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.14.0" class="external-link">sandpaper (0.14.0)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.7.0" class="external-link">pegboard (0.7.0)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.7.1" class="external-link">pegboard (0.7.1)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.3.0" class="external-link">varnish (0.3.0)</a>.</p>
 			</div>
 		</footer>
@@ -902,8 +1135,8 @@ any links that you are not going to use.
   "url": "https://grlloyd.github.io/struct-carpentry/aio.html",
   "identifier": "https://grlloyd.github.io/struct-carpentry/aio.html",
   "dateCreated": "2023-10-02",
-  "dateModified": "2023-10-03",
-  "datePublished": "2023-10-03"
+  "dateModified": "2023-10-05",
+  "datePublished": "2023-10-05"
 }
 
   </script><script>

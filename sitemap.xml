@@ -13,6 +13,9 @@
     <loc>https://grlloyd.github.io/struct-carpentry/aio.html</loc>
   </url>
   <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/datasetexperiment-objects.html</loc>
+  </url>
+  <url>
     <loc>https://grlloyd.github.io/struct-carpentry/getting-started.html</loc>
   </url>
   <url>
@@ -32,6 +35,9 @@
   </url>
   <url>
     <loc>https://grlloyd.github.io/struct-carpentry/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/instructor/datasetexperiment-objects.html</loc>
   </url>
   <url>
     <loc>https://grlloyd.github.io/struct-carpentry/instructor/getting-started.html</loc>
@@ -55,6 +61,9 @@
     <loc>https://grlloyd.github.io/struct-carpentry/instructor/key-points.html</loc>
   </url>
   <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/instructor/model-objects.html</loc>
+  </url>
+  <url>
     <loc>https://grlloyd.github.io/struct-carpentry/instructor/model-sequences.html</loc>
   </url>
   <url>
@@ -73,6 +82,9 @@
     <loc>https://grlloyd.github.io/struct-carpentry/instructor/summary.html</loc>
   </url>
   <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/instructor/templates-and-objects.html</loc>
+  </url>
+  <url>
     <loc>https://grlloyd.github.io/struct-carpentry/instructor-notes.html</loc>
   </url>
   <url>
@@ -83,6 +95,9 @@
   </url>
   <url>
     <loc>https://grlloyd.github.io/struct-carpentry/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/model-objects.html</loc>
   </url>
   <url>
     <loc>https://grlloyd.github.io/struct-carpentry/model-sequences.html</loc>
@@ -101,5 +116,8 @@
   </url>
   <url>
     <loc>https://grlloyd.github.io/struct-carpentry/summary.html</loc>
+  </url>
+  <url>
+    <loc>https://grlloyd.github.io/struct-carpentry/templates-and-objects.html</loc>
   </url>
 </urlset>
