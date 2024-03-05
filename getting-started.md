@@ -1,0 +1,71 @@
+---
+title: "Getting started"
+teaching: 0
+exercises: 0
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How do you install Bioconductor packages?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Install `struct`, `structToolbox` and `metabolomicsWorkbenchR` and all dependencies.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Summary and Setup
+
+If you haven't already, you should make sure you have the latest release of R and R-Studio installed, and have installed the `BiocManager` package by following the instructions on the [setup page](../learners/setup.md).
+<br>
+
+### What is the BiocManager package for?
+[Bioconductor](https://www.bioconductor.org/) is a repository of R packages. All packages are regularly built and tested to ensure that they are functioning correctly and meet certain standards. For every new release of R a snapshot of the entire Bioconductor repository is stored and retained in order to make analysis reproducible at the time it was run. 
+
+The `BiocManager` package ([link](https://www.rdocumentation.org/packages/BiocManager)) contains a small number of functions to install R packages and check that the versions are compatible with the installed version.
+
+It is essential therefore that you keep up-to-date with the R version, otherwise you will not be able to use the latest version of packages in the Bioconductor repository.
+<br>
+
+### Installing Bioconductor packages
+Using `BiocManager` to install the packages needed for this course will ensure that you are using the most recent release, and can also install the appropriate versions of all needed dependencies. To install the packages for this course copy and paste the code below into the command line and hit Enter:
+
+```R
+BiocManager::install(
+    c('struct','structToolbox','metabolomicsWorkbenchR'),
+    dependencies='suggests')
+```
+<br>
+
+You can check that the packages are installed and working by running the following code:
+
+
+
+```R
+library('struct')
+library('structToolbox')
+library('metabolomicsWorkbenchR')
+```
+
+If you receive no error messages, then you are ready to go!
+<br>
+
+### Additional packages
+In addition to the `struct` and `structToolbox` packages it is useful to load the `ggplot2` package. It will allow you to modify e.g. chart titles quickly and easily. It should have been installed already as a dependency of `structToolbox`, so you can just activate it for the current session.
+
+```R
+library(ggplot2)
+```
+
+
+
+
+
+
+
+
+
+
+
